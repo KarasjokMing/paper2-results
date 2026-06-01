@@ -1,0 +1,54 @@
+\section*{Full middle-incidence linear equations}
+
+This file records the explicit middle-waveguide left-incidence equations used for the manuscript revision.
+The unknown vector is
+\[
+\tilde{\mathbf{x}}^{(3)}
+= (\tilde A,\tilde B,\tilde C,\tilde D,\tilde E,\tilde F,
+\tilde r_1,\tilde t_1,\tilde r_2,\tilde t_2,\tilde r_3,\tilde t_3,
+\eta_a^{(3)},\eta_b^{(3)})^{\mathsf T}.
+\]
+The source is a unit right-moving field incident from WG2-L.
+In the gauge \(\theta^m_{j,1}=0\), the 12 jump equations are
+\begin{subequations}
+\begin{align}
+-i(\tilde A-0)+\eta_a^{(3)}&=0,\\
+i(\tilde B-\tilde r_1)+\eta_a^{(3)}&=0,\\
+-i e^{i\phi_1}(\tilde t_1-\tilde A)+\eta_a^{(3)}e^{-i\theta_{a1}}&=0,\\
+-i e^{-i\phi_1}\tilde B+\eta_a^{(3)}e^{-i\theta_{a1}}&=0,\\
+-i(\tilde C-1)+\eta_a^{(3)}+\eta_b^{(3)}&=0,\\
+i(\tilde D-\tilde r_2)+\eta_a^{(3)}+\eta_b^{(3)}&=0,\\
+-i e^{i\phi_2}(\tilde t_2-\tilde C)
++\eta_a^{(3)}e^{-i\theta_{a2}}
++\eta_b^{(3)}e^{-i\theta_{b2}}&=0,\\
+-i e^{-i\phi_2}\tilde D
++\eta_a^{(3)}e^{-i\theta_{a2}}
++\eta_b^{(3)}e^{-i\theta_{b2}}&=0,\\
+-i\tilde E+\eta_b^{(3)}&=0,\\
+i(\tilde F-\tilde r_3)+\eta_b^{(3)}&=0,\\
+-i e^{i\phi_3}(\tilde t_3-\tilde E)+\eta_b^{(3)}e^{-i\theta_{b3}}&=0,\\
+-i e^{-i\phi_3}\tilde F+\eta_b^{(3)}e^{-i\theta_{b3}}&=0.
+\end{align}
+\end{subequations}
+The two atomic self-consistency equations, using symmetric averages at the coupling points, are
+\begin{align}
+\frac{\Delta}{\Gamma}\eta_a^{(3)}
+&= \frac{1}{2}\Bigl[
+\tilde A+\tilde r_1+\tilde B
++1+\tilde C+\tilde r_2+\tilde D \nonumber\\
+&\quad + e^{i\theta_{a1}}\bigl(e^{i\phi_1}(\tilde A+\tilde t_1)
++e^{-i\phi_1}\tilde B\bigr) \nonumber\\
+&\quad + e^{i\theta_{a2}}\bigl(e^{i\phi_2}(\tilde C+\tilde t_2)
++e^{-i\phi_2}\tilde D\bigr)
+\Bigr],\\
+\frac{\Delta}{\Gamma}\eta_b^{(3)}
+&= \frac{1}{2}\Bigl[
+1+\tilde C+\tilde r_2+\tilde D
++\tilde E+\tilde r_3+\tilde F \nonumber\\
+&\quad + e^{i\theta_{b2}}\bigl(e^{i\phi_2}(\tilde C+\tilde t_2)
++e^{-i\phi_2}\tilde D\bigr) \nonumber\\
+&\quad + e^{i\theta_{b3}}\bigl(e^{i\phi_3}(\tilde E+\tilde t_3)
++e^{-i\phi_3}\tilde F\bigr)
+\Bigr].
+\end{align}
+Solving the six internal-field equations and substituting the result into the remaining equations gives the \(2\times2\) atomic reduction used in Appendix B of the manuscript.

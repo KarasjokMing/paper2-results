@@ -37,13 +37,13 @@
 \date{\today}
 
 \begin{abstract}
-We analyze single-photon scattering in a waveguide-QED node formed by two giant atoms coupled to three one-dimensional waveguides.
-The two atoms connect three waveguides, so a photon entering from either side of any waveguide can leave through six output ports.
-Using a real-space scattering formulation, we derive the single-photon amplitudes by solving the full set of boundary and atomic equations.
-The resulting $6\times6$ scattering matrix is built from six independently solved incident columns and is unitary to numerical precision.
-Local coupling phases provide independent interference knobs that are absent in the corresponding small-atom node; by tuning them, selected output channels can be enhanced while the other five are suppressed.
-The phase-reversed device is the time-reversal partner of the original one, giving the probability relation $T_{ij}(\theta)=T_{ji}(-\theta)$ rather than the ordinary reciprocity condition $S=S^{\mathsf T}$.
-Representative fixed-backbone parameter sets show near-unit single-photon routing probabilities and extended high-fidelity basins in phase space.
+We study a single-photon scattering model in a waveguide-QED node formed by two giant atoms coupled to three one-dimensional waveguides.
+The two atoms connect the three waveguides in series through a shared middle waveguide, producing a six-port scattering problem because a photon may enter from either side of any waveguide.
+Using a real-space scattering formulation, we solve the boundary and atomic equations and assemble the complete $6\times6$ scattering matrix from six independently derived incident columns.
+The direct matrix solution is unitary to numerical precision and provides an oracle for checking compact analytical formulas.
+Local coupling phases act as interference controls that are absent in the corresponding small-atom reference, where the two far-waveguide output directions remain probabilistically indistinguishable.
+For the giant-atom node, representative fixed-backbone parameter sets realize near-unit routing to selected output ports, while phase-space maps reveal both broad constructive basins and narrow near-resonant routes.
+Reversing all local coupling phases gives the time-reversed scattering response, $T_{ij}(\theta)=T_{ji}(-\theta)$.
 \end{abstract}
 
 \maketitle
@@ -105,6 +105,7 @@ The six external ports are labeled by the asymptotic propagation direction on ea
 \label{eq:ports}
 \end{equation}
 where ``L'' and ``R'' refer to the left- and right-moving output directions, respectively.
+With this ordering, $S_{ij}$ denotes the output amplitude at port $i$ for a unit-amplitude input from port $j$.
 With this convention, for WG1 left incidence the reflection amplitude $r_1$ exits through port~1 (WG1-L, left-moving) and the transmission amplitude $t_1$ exits through port~2 (WG1-R, right-moving).
 The complete column vector for WG1-L incidence is therefore $\mathbf{s}^{(1)} = (r_1,\,t_1,\,r_2,\,t_2,\,r_3,\,t_3)^{\mathsf T}$.
 
@@ -206,24 +207,30 @@ M =& -2\Gam^2\cos(\thatwo-\thbtwo)
 \end{align}
 and the six scattering amplitudes.
 It is useful to first express the amplitudes through the atomic excitation amplitudes $\eta_a^{(1)},\eta_b^{(1)}$ obtained from the $14\times14$ system:
+The superscript labels the incident port, not a power: $\eta_a^{(1)}$ and $\eta_b^{(1)}$ are the atomic excitation amplitudes driven by a unit input from port~1, while a different incident port gives a different source vector and hence different excitation amplitudes.
+This $\eta$-form separates two ingredients that are otherwise mixed in long rational expressions: the atomic response of the two-emitter subsystem and the directional radiation factors into each output port.
 \begin{subequations}
 \label{eq:wg1_amps_eta}
 \begin{align}
 r_1 &= -\ii\eta_a^{(1)} P_{1-}, \label{eq:r1_eta}\\[2pt]
-t_1 &= 1 - \ii\eta_a^{(1)} P_{1+}^*, \label{eq:t1_eta}\\[2pt]
+t_1 &= 1 - \ii\eta_a^{(1)} P_{1,a}^{R}, \label{eq:t1_eta}\\[2pt]
 r_2 &= -\ii\bigl(\eta_a^{(1)} P_{2-}^a + \eta_b^{(1)} P_{2-}^b\bigr), \label{eq:r2_eta}\\[2pt]
-t_2 &= -\ii\bigl(\eta_a^{(1)} P_{2+}^{a*} + \eta_b^{(1)} P_{2+}^{b*}\bigr), \label{eq:t2_eta}\\[2pt]
+t_2 &= -\ii\bigl(\eta_a^{(1)} P_{2,a}^{R} + \eta_b^{(1)} P_{2,b}^{R}\bigr), \label{eq:t2_eta}\\[2pt]
 r_3 &= -\ii\eta_b^{(1)} P_{3-}, \label{eq:r3_eta}\\[2pt]
-t_3 &= -\ii\eta_b^{(1)} P_{3+}^*. \label{eq:t3_eta}
+t_3 &= -\ii\eta_b^{(1)} P_{3,b}^{R}. \label{eq:t3_eta}
 \end{align}
 \end{subequations}
-Here we have introduced a systematic phase-factor notation to distinguish output directions:
+Here we use a systematic phase-factor notation to distinguish the source factor and the two output directions:
 \begin{equation}
-P_{j,m}^{L} = 1+\ee^{\ii(\ph_j-\theta_{mj})},\quad
-P_{j,m}^{R} = 1+\ee^{-\ii(\ph_j+\theta_{mj})},
+\begin{aligned}
+P_{j,m}^{\rm src}&=1+\ee^{\ii(\ph_j+\theta_{mj})},\\
+P_{j,m}^{L}&=1+\ee^{\ii(\ph_j-\theta_{mj})},\\
+P_{j,m}^{R}&=1+\ee^{-\ii(\ph_j+\theta_{mj})},
+\end{aligned}
 \label{eq:Pnotation_wg1}
 \end{equation}
-which for waveguides~1 and~3 specialize to $P_{1-}\equiv P_{1,a}^{L}$, $P_{1+}^*\equiv P_{1,a}^{R}$, $P_{3-}\equiv P_{3,b}^{L}$, $P_{3+}^*\equiv P_{3,b}^{R}$.
+so $P_{j,m}^{R}=(P_{j,m}^{\rm src})^*$, whereas $P_{j,m}^{L}$ is the left-output radiation factor.
+For compactness we write $\Poneplus\equiv P_{1,a}^{\rm src}$, $\Poneminus\equiv P_{1,a}^{L}$, $\Pthreeplus\equiv P_{3,b}^{\rm src}$, and $\Pthreeminus\equiv P_{3,b}^{L}$.
 The ballistic ``1'' in $t_1$ represents the transmitted photon that passes through without atomic interaction.
 
 The atomic excitation amplitudes are obtained from the reduced $2\times2$ atomic subsystem:
@@ -245,7 +252,9 @@ r_1 &= -\Gam\,\Poneminus\Poneplus\,(\tau_{b2}+\tau_{b3}+4\Gam-\ii\Del)/M, \label
 r_2 &= -\Gam\,\Poneplus\,A_r/M, \label{eq:r2_fact}
 \end{align}
 \end{subequations}
-where $N_{t_1}$ is given in Appendix~\ref{app:t1}. The remaining amplitudes $t_2$, $t_3$, $r_3$ do not admit comparably simple elimination and are most compactly represented in the $\eta$-form of Eqs.~\eqref{eq:t2_eta}--\eqref{eq:t3_eta}.
+The quantity $N_{t_1}$ is not an elementary interference factor; it is simply the full numerator of $t_1$, introduced to keep the main text compact, and is given explicitly in Appendix~\ref{app:t1}.
+The eliminated form for $r_2$ has been verified to reduce to $-\Gamma\Poneplus A_r/M$.
+By contrast, the previously tempting one-factor eliminated expressions for $t_2$, $t_3$, and $r_3$ do not pass the direct-oracle audit, so these channels are deliberately retained in the verified $\eta$-form of Eqs.~\eqref{eq:t2_eta}--\eqref{eq:t3_eta}.
 The elementary phase factors entering Eqs.~\eqref{eq:wg1_amps_eta} are
 \begin{subequations}
 \label{eq:P}
@@ -275,16 +284,16 @@ The bridge factor coupling waveguides~2 and~3 is
 \label{eq:B3}
 \end{equation}
 
-Equations~\eqref{eq:wg1_factorized} reveal a factorized structure for the three amplitudes that simplify under $\eta$-elimination: $r_1$ contains the product $\Poneminus\Poneplus$, $r_2$ contains $\Poneplus A_r$, and $t_1$ requires the full numerator $N_{t_1}$. The remaining amplitudes $t_2$, $t_3$, $r_3$ are given in compact $\eta$-form by Eqs.~\eqref{eq:t2_eta}--\eqref{eq:t3_eta}, where the algebraic complexity resides in $\eta_a^{(1)},\eta_b^{(1)}$.
+Equations~\eqref{eq:wg1_factorized} reveal a factorized structure for the three amplitudes that simplify under $\eta$-elimination: $r_1$ contains the product $\Poneminus\Poneplus$, $r_2$ contains $\Poneplus A_r$, and $t_1$ requires the full numerator $N_{t_1}$. The remaining amplitudes $t_2$, $t_3$, $r_3$ are given in compact $\eta$-form by Eqs.~\eqref{eq:t2_eta}--\eqref{eq:t3_eta}, where the algebraic complexity resides in $\eta_a^{(1)},\eta_b^{(1)}$ and the directional output factors.
 
 \subsection{Zero-condition covering}
 
 The $\eta$-form of Eqs.~\eqref{eq:wg1_amps_eta} reveals that both atomic excitation amplitudes share the entrance factor $\Poneplus$ [see Eqs.~\eqref{eq:eta_wg1}]. Consequently $\Poneplus=0$ simultaneously kills five amplitudes ($r_1,r_2,t_2,r_3,t_3$), leaving only $t_1$ active. Beyond this global cover, each amplitude possesses individual zero conditions:
 \begin{align}
 Z(r_1)&: \Poneminus=0 \;\text{or}\; \Poneplus=0,\\
-Z(t_2)&: \eta_a^{(1)}P_{2+}^{a*} + \eta_b^{(1)}P_{2+}^{b*}=0,\\
+Z(t_2)&: \eta_a^{(1)}P_{2,a}^{R} + \eta_b^{(1)}P_{2,b}^{R}=0,\\
 Z(r_2)&: \eta_a^{(1)}P_{2-}^{a} + \eta_b^{(1)}P_{2-}^{b}=0,\\
-Z(t_3)&: \Poneplus=0 \;\text{or}\; P_{3+}^*=0,\\
+Z(t_3)&: \Poneplus=0 \;\text{or}\; P_{3,b}^{R}=0,\\
 Z(r_3)&: \Poneplus=0 \;\text{or}\; P_{3-}=0.
 \end{align}
 The elementary phase-factor conditions are
@@ -292,7 +301,7 @@ The elementary phase-factor conditions are
 \begin{align}
 \Poneplus=0 &\Longleftrightarrow \ph_1+\thaone = (2n+1)\pi,\\
 \Poneminus=0 &\Longleftrightarrow \ph_1-\thaone = (2n+1)\pi,\\
-P_{3+}^*=0 &\Longleftrightarrow \ph_3+\thbthree = (2n+1)\pi,\\
+P_{3,b}^{R}=0 &\Longleftrightarrow \ph_3+\thbthree = (2n+1)\pi,\\
 P_{3-}=0 &\Longleftrightarrow \ph_3-\thbthree = (2n+1)\pi.
 \end{align}
 \end{subequations}
@@ -302,7 +311,7 @@ Perfect routing to a target port requires selecting zero conditions that simulta
 Table~\ref{tab:zero_coverings} summarizes the representative covering strategies.
 
 \begin{table}[!htbp]
-\caption{Representative sufficient zero-condition coverings for waveguide-1 edge incidence. Conditions $C_2^t$ and $C_2^r$ denote the linear-combination zeros $\eta_a^{(1)}P_{2+}^{a*}+\eta_b^{(1)}P_{2+}^{b*}=0$ and $\eta_a^{(1)}P_{2-}^{a}+\eta_b^{(1)}P_{2-}^{b}=0$, respectively. The table gives constructive coverings used in this work and is not a necessary-and-sufficient classification of all mathematical solutions.}
+\caption{Representative sufficient zero-condition coverings for waveguide-1 edge incidence. Conditions $C_2^t$ and $C_2^r$ denote the linear-combination zeros $\eta_a^{(1)}P_{2,a}^{R}+\eta_b^{(1)}P_{2,b}^{R}=0$ and $\eta_a^{(1)}P_{2-}^{a}+\eta_b^{(1)}P_{2-}^{b}=0$, respectively. The table gives constructive coverings used in this work and is not a necessary-and-sufficient classification of all mathematical solutions.}
 \label{tab:zero_coverings}
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -313,8 +322,8 @@ $T_1$ & $\Poneplus=0$ & $M\neq0$ & Exact sufficient route \\
 $R_1$ & $N_{t_1}=0,\ C_2^t=0,\ C_2^r=0,\ r_3=t_3=0$ & $\Poneplus\Poneminus\neq0,\ M\neq0$ & Composite route \\
 $T_2$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^r=0,\ r_3=t_3=0$ & $C_2^t\neq0,\ M\neq0$ & Composite route \\
 $R_2$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^t=0,\ r_3=t_3=0$ & $C_2^r\neq0,\ M\neq0$ & Composite route \\
-$T_3$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^t=0,\ C_2^r=0,\ P_{3-}=0$ & $P_{3+}^*\neq0,\ \Poneplus\neq0,\ M\neq0$ & Near-resonant representative route \\
-$R_3$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^t=0,\ C_2^r=0,\ P_{3+}^*=0$ & $P_{3-}\neq0,\ \Poneplus\neq0,\ M\neq0$ & Near-resonant representative route \\
+$T_3$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^t=0,\ C_2^r=0,\ P_{3-}=0$ & $P_{3,b}^{R}\neq0,\ \Poneplus\neq0,\ M\neq0$ & Near-resonant representative route \\
+$R_3$ & $N_{t_1}=0,\ \Poneminus=0,\ C_2^t=0,\ C_2^r=0,\ P_{3,b}^{R}=0$ & $P_{3-}\neq0,\ \Poneplus\neq0,\ M\neq0$ & Near-resonant representative route \\
 \end{tabular}%
 }
 \end{table}
@@ -331,7 +340,7 @@ The number of constraints approaches the number of available parameters, making 
 
 \textbf{Near-resonant singular routes ($T_3,R_3$).}
 Routing to waveguide~3 is the most constrained case.
-It requires entrance locking via $\Poneminus=0$ (since $\Poneplus=0$ would also kill the target), waveguide-2 closure via $C_2^t=C_2^r=0$, and direction selectivity on waveguide~3 through $P_{3+}^*=0$ or $P_{3-}=0$.
+It requires entrance locking via $\Poneminus=0$ (since $\Poneplus=0$ would also kill the target), waveguide-2 closure via $C_2^t=C_2^r=0$, and direction selectivity on waveguide~3 through $P_{3,b}^{R}=0$ or $P_{3-}=0$.
 At strict resonance $\Del=0$, the waveguide-2 closure conditions force degeneracy between the two waveguide-3 directions; a small nonzero detuning $\Del$ breaks this degeneracy at linear order, enabling directional selection.
 The optimal detuning scale for the representative branch is $|\Del|/\Gam\sim 4.6\times10^{-3}$, consistent with the near-resonant character of this mechanism: a small but finite detuning is required to break the directional degeneracy, yet it must remain within the resonance window.
 
@@ -351,7 +360,7 @@ All angular parameters are quoted in units of $\pi$ below.
 Figure~\ref{fig:phase_maps} displays two-dimensional slices through the seven-dimensional routing landscape around the high-transmission basins identified by the zero-condition coverings of Table~\ref{tab:zero_coverings}.
 Figure~\ref{fig:phase_maps} shows four representative phase-space maps rather than all six target ports.
 This choice follows the symmetry structure of the fixed-backbone problem: $T_2$ and $R_2$ form a direction-related pair, and $T_3$ and $R_3$ form a corresponding far-waveguide pair.
-Therefore, $T_2$ and $T_3$ are used as representative members of these two pairs, while $R_2$ and $R_3$ are retained in the full numerical data set and in the repository all-target figure but not shown in the main figure.
+Because $T_2/R_2$ and $T_3/R_3$ form direction-related pairs under the fixed-backbone symmetry, the main figure shows $T_2$ and $T_3$ as representatives, while the corresponding $R_2$ and $R_3$ data are retained in Table~\ref{tab:opt} and the online repository.
 The purpose of Fig.~\ref{fig:phase_maps} is not to enumerate every optimized target, but to compare the distinct routing mechanisms: direct self-transmission, same-waveguide reflection, shared-waveguide routing, and far-waveguide routing.
 The plotted coordinates are chosen channel by channel so that the relevant structure is visible: broad routes are shown on full or seam-centered phase windows, while the remote waveguide-3 representative route requires a magnified near-resonant window.
 All panels use the same probability color scale, so the areas of the high-fidelity regions can be compared directly.
@@ -361,18 +370,20 @@ The remaining parameters are held at their optimized values listed in Appendix~\
   \centering
   \includegraphics[width=0.96\textwidth]{fig_phase_routing_maps.pdf}
   \caption{Representative phase-coordinate routing landscapes for four fixed-backbone routing mechanisms under waveguide-1 edge incidence.
-  The $T_1$ panel shows the full $0$--$2\pi$ phase plane, while the $R_1$ panel is recentered at the periodic seam so that the two edge features join into one continuous high-transmission region.
+  The $T_1$ panel imposes the sufficient entrance condition $\Poneplus=0$ and scans the unrelated phases $(\varphi_2,\theta_{b2})$, showing that this condition is robust over a broad transverse parameter range rather than a fine-tuned point.
+  The $R_1$ panel is recentered at the periodic seam so that the two edge features join into one continuous high-transmission region.
   The $T_2$ panel uses an extended branch window large enough to show the boundary of the high-fidelity island around the correlated branch neighborhood introduced below.
   The $T_3$ panel uses a magnified near-resonant window because the far-waveguide high-fidelity region is much narrower on the full phase torus.
   Contours mark $P=0.9$, $0.99$, and $0.999$ where visible.
-  These two-dimensional cuts demonstrate sufficient high-probability routes around representative optima; they are not intended as uniqueness proofs for the corresponding routing conditions.
+  These two-dimensional cuts demonstrate sufficient high-probability routes around representative optima; in particular, the $T_1$ panel is a sufficiency test for $\Poneplus=0$, not a necessity proof.
   The complete six-target optimized parameter record is given in Table~\ref{tab:opt}; the symmetry-related $R_2$ and $R_3$ maps are retained in the repository all-target figure.}
   \label{fig:phase_maps}
 \end{figure*}
 
-The $T_1$ panel is particularly instructive: the broad diagonal band of high transmission directly visualizes the sufficient direct phase-zero condition $\ph_1+\thaone=(2n+1)\pi$ ($\Poneplus=0$), confirming that the entire one-parameter family of phase combinations on this line achieves near-unit routing.
+The $T_1$ panel is particularly instructive: after fixing one representative point on the direct phase-zero condition $\ph_1+\thaone=(2n+1)\pi$ ($\Poneplus=0$), it scans the unrelated parameters $\varphi_2$ and $\theta_{b2}$ over the full $0$--$2\pi$ range.
+The resulting near-unit plateau confirms that this entrance-interference condition suppresses the five non-target amplitudes without requiring simultaneous tuning of the downstream phases.
 This condition is not claimed to be the only mathematical route to $T_1=1$; it is the simplest constructive route because it suppresses all five non-target amplitudes at once.
-The width of the band reflects the insensitivity of the denominator $M$ to the specific value of the phase sum within a reasonable tolerance.
+Residual variation in the panel is controlled by the common denominator $M$ and marks the finite exceptional set where the scattering problem approaches a pole or numerical singularity.
 
 The $T_2$ panel exhibits a compact high-probability island, consistent with the composite-interference mechanism: this representative shared-waveguide channel requires the simultaneous satisfaction of multiple zero conditions, leaving a lower-dimensional solution manifold.
 The $R_2$ map is omitted from the main figure because it is symmetry-related to $T_2$ and does not introduce a distinct routing class.
@@ -461,7 +472,7 @@ No choice of $\phi$ or $\Del$ can make $|t_3^s|^2\neq|r_3^s|^2$.
 
 In contrast, the giant-atom far-waveguide amplitudes [Eqs.~\eqref{eq:r3_eta}--\eqref{eq:t3_eta}] are proportional to two \emph{independent} phase factors,
 \begin{equation}
-  t_3 \propto P_{3+}^* = 1+\ee^{-\ii(\ph_3+\thbthree)},\qquad
+  t_3 \propto P_{3,b}^{R} = 1+\ee^{-\ii(\ph_3+\thbthree)},\qquad
   r_3 \propto P_{3-} = 1+\ee^{\ii(\ph_3-\thbthree)},
 \end{equation}
 whose zeros can be controlled independently through the local phase difference $\thbthree$.
