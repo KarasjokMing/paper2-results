@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local virtual environments
+.venv/
+venv/
+env/
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.run.xml
+*.bcf
+
+# Temporary and large local outputs
+*.tmp
+*.bak
+*.zip
+outputs/tmp/
+outputs/cache/
+
+# Credentials and secrets
+.env
+*.env
+*token*
+*secret*
+*credential*
+id_rsa*

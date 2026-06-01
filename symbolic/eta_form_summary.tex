@@ -1,0 +1,76 @@
+% Auto-generated eta-form summary
+% Date: 2026-05-31
+
+\section{Eta-Form Scattering Amplitudes for All Six Ports}
+
+The six output amplitudes for incident port $j$ are expressed through the atomic 
+excitation amplitudes $\eta_a^{(j)},\eta_b^{(j)}$ as follows.
+
+\subsection{Notation}
+\begin{align}
+P_{j,m}^{L} &= 1+e^{i(\varphi_j-\theta_{mj})} \quad\text{(left-output factor)}\\
+P_{j,m}^{R} &= 1+e^{-i(\varphi_j+\theta_{mj})} \quad\text{(right-output factor)}\\
+P_{j,m}^{\rm src} &= 1+e^{i(\varphi_j+\theta_{mj})} \quad\text{(source factor)}
+\end{align}
+
+\subsection{Port 1: WG1-L Incidence (right-mover from left)}
+\begin{align}
+r_1 &= -i\,\eta_a^{(1)} P_{1,a}^{L} \\
+t_1 &= 1 - i\,\eta_a^{(1)} P_{1,a}^{R} \\
+r_2 &= -i\bigl(\eta_a^{(1)} P_{2,a}^{L} + \eta_b^{(1)} P_{2,b}^{L}\bigr) \\
+t_2 &= -i\bigl(\eta_a^{(1)} P_{2,a}^{R} + \eta_b^{(1)} P_{2,b}^{R}\bigr) \\
+r_3 &= -i\,\eta_b^{(1)} P_{3,b}^{L} \\
+t_3 &= -i\,\eta_b^{(1)} P_{3,b}^{R}
+\end{align}
+
+\subsection{Port 2: WG1-R Incidence (left-mover from right)}
+\begin{align}
+s_1^{(2)} &= 1 - i\,\eta_a^{(2)} P_{1,a}^{L} \quad\text{(ballistic on WG1-L)}\\
+s_2^{(2)} &= -i\,\eta_a^{(2)} P_{1,a}^{R} \\
+s_3^{(2)} &= -i\bigl(\eta_a^{(2)} P_{2,a}^{L} + \eta_b^{(2)} P_{2,b}^{L}\bigr) \\
+s_4^{(2)} &= -i\bigl(\eta_a^{(2)} P_{2,a}^{R} + \eta_b^{(2)} P_{2,b}^{R}\bigr) \\
+s_5^{(2)} &= -i\,\eta_b^{(2)} P_{3,b}^{L} \\
+s_6^{(2)} &= -i\,\eta_b^{(2)} P_{3,b}^{R}
+\end{align}
+
+\subsection{Port 3: WG2-L Incidence}
+\begin{align}
+\tilde r_1 &= -i\,\eta_a^{(3)} P_{1,a}^{L}, \quad
+\tilde t_1 = -i\,\eta_a^{(3)} P_{1,a}^{R} \\
+\tilde r_2 &= -i\bigl(\eta_a^{(3)} P_{2,a}^{L} + \eta_b^{(3)} P_{2,b}^{L}\bigr) \\
+\tilde t_2 &= 1 - i\bigl(\eta_a^{(3)} P_{2,a}^{R} + \eta_b^{(3)} P_{2,b}^{R}\bigr) \\
+\tilde r_3 &= -i\,\eta_b^{(3)} P_{3,b}^{L}, \quad
+\tilde t_3 = -i\,\eta_b^{(3)} P_{3,b}^{R}
+\end{align}
+
+\subsection{Port 4: WG2-R Incidence}
+\begin{align}
+s_1^{(4)} &= -i\,\eta_a^{(4)} P_{1,a}^{L}, \quad
+s_2^{(4)} = -i\,\eta_a^{(4)} P_{1,a}^{R} \\
+s_3^{(4)} &= 1 - i\bigl(\eta_a^{(4)} P_{2,a}^{L} + \eta_b^{(4)} P_{2,b}^{L}\bigr) \\
+s_4^{(4)} &= -i\bigl(\eta_a^{(4)} P_{2,a}^{R} + \eta_b^{(4)} P_{2,b}^{R}\bigr) \\
+s_5^{(4)} &= -i\,\eta_b^{(4)} P_{3,b}^{L}, \quad
+s_6^{(4)} = -i\,\eta_b^{(4)} P_{3,b}^{R}
+\end{align}
+
+\subsection{Port 5: WG3-L Incidence}
+\begin{align}
+\hat r_1 &= -i\,\eta_a^{(5)} P_{1,a}^{L}, \quad
+\hat t_1 = -i\,\eta_a^{(5)} P_{1,a}^{R} \\
+\hat r_2 &= -i\bigl(\eta_a^{(5)} P_{2,a}^{L} + \eta_b^{(5)} P_{2,b}^{L}\bigr) \\
+\hat t_2 &= -i\bigl(\eta_a^{(5)} P_{2,a}^{R} + \eta_b^{(5)} P_{2,b}^{R}\bigr) \\
+\hat r_3 &= -i\,\eta_b^{(5)} P_{3,b}^{L}, \quad
+\hat t_3 = 1 - i\,\eta_b^{(5)} P_{3,b}^{R}
+\end{align}
+
+\subsection{Port 6: WG3-R Incidence}
+\begin{align}
+s_1^{(6)} &= -i\,\eta_a^{(6)} P_{1,a}^{L}, \quad
+s_2^{(6)} = -i\,\eta_a^{(6)} P_{1,a}^{R} \\
+s_3^{(6)} &= -i\bigl(\eta_a^{(6)} P_{2,a}^{L} + \eta_b^{(6)} P_{2,b}^{L}\bigr) \\
+s_4^{(6)} &= -i\bigl(\eta_a^{(6)} P_{2,a}^{R} + \eta_b^{(6)} P_{2,b}^{R}\bigr) \\
+s_5^{(6)} &= 1 - i\,\eta_b^{(6)} P_{3,b}^{L}, \quad
+s_6^{(6)} = -i\,\eta_b^{(6)} P_{3,b}^{R}
+\end{align}
+
+% End of eta-form summary

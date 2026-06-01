@@ -1,0 +1,9 @@
+formula,n,max_err,threshold,status,action
+WG1-L r1 (paper),5000,1.87e-15,1e-12,PASS,keep
+WG1-L r2 (paper),5000,9.37e-16,1e-12,PASS,keep
+WG1-L t2 (paper),5000,1.37e+00,1e-12,FAIL,replace with eta-form
+WG1-L t3 (paper),5000,1.26e+00,1e-12,FAIL,replace with eta-form
+WG1-L r3 (paper),5000,9.27e-01,1e-12,FAIL,replace with eta-form
+WG1-L eta-form all 6,5000,<2e-15,1e-12,PASS,use in main text
+WG2-L eta-form all 6,5000,<2e-15,1e-12,PASS,keep
+All 6 ports eta-form,5000,<3e-15,1e-12,PASS,use everywhere

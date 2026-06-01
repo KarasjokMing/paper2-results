@@ -1,0 +1,47 @@
+% Auto-generated eta expressions
+\section{Atomic Excitation Amplitudes}
+
+\subsection{Port 1 (WG1-L)}
+\begin{align}
+\eta_a^{(1)} &= -i\Gamma\,P_{1+}\,\frac{\tau_{b2}+\tau_{b3}+4\Gamma-i\Delta}{M} \\
+\eta_b^{(1)} &= \frac{i\Gamma P_{1+}}{M\,P_{2-}^b}
+\bigl[(\tau_{b2}+\tau_{b3}+4\Gamma-i\Delta)P_{2-}^a - A_r\bigr]
+\end{align}
+where $P_{1+}=P_{1,a}^{\rm src}$, $P_{2-}^a=P_{2,a}^{L}$, $P_{2-}^b=P_{2,b}^{L}$.
+
+\subsection{Port 3 (WG2-L)}
+\begin{align}
+\eta_a^{(3)} &= -i\Gamma\,\frac{A_t}{M} \\
+\eta_b^{(3)} &= -i\Gamma\,\frac{A_t^b}{M}
+\end{align}
+
+\subsection{Port 5 (WG3-L)}
+By $a\leftrightarrow b$, $1\leftrightarrow 3$ symmetry:
+\begin{align}
+\eta_b^{(5)} &= -i\Gamma\,P_{3+}\,\frac{\tau_{a1}+\tau_{a2}+4\Gamma-i\Delta}{M} \\
+\eta_a^{(5)} &= \frac{i\Gamma P_{3+}}{M\,P_{2-}^a}
+\bigl[(\tau_{a1}+\tau_{a2}+4\Gamma-i\Delta)P_{2-}^b - A_r^b\bigr]
+\end{align}
+where $A_r^b$ is the $a\leftrightarrow b$ counterpart of $A_r$.
+
+\subsection{Ports 2, 4, 6 (Right Incidence)}
+The atomic amplitudes $\eta_a^{(j)},\eta_b^{(j)}$ for right-incidence ports are 
+obtained by solving the same $14\times14$ linear system with the left-moving 
+incident boundary condition. They are related to the left-incidence amplitudes 
+by the time-reversal partner relation and are most compactly expressed through 
+the $\eta$-form of the preceding section.
+
+\subsection{Composite Factors (fixed backbone $\theta_{a2}=\pi$)}
+\begin{align}
+A_t &= (1-e^{i\varphi_2})(\tau_{b3}+2\Gamma-i\Delta) 
+      + \Gamma(1-e^{2i\varphi_2})(1+e^{i\theta_{b2}}) \\
+A_r &= (1-e^{i\varphi_2})(\tau_{b3}+2\Gamma-i\Delta) 
+      + \Gamma(1-e^{2i\varphi_2})(1+e^{-i\theta_{b2}}) \\
+A_t^b &= (1+e^{i(\varphi_2+\theta_{b2})})(\tau_{a1}+2\Gamma-i\Delta) 
+        + \Gamma(1-e^{2i\varphi_2})(1+e^{-i\theta_{b2}}) \\
+A_r^b &= (1+e^{i(\varphi_2-\theta_{b2})})(\tau_{a1}+2\Gamma-i\Delta) 
+        + \Gamma(1-e^{2i\varphi_2})(1+e^{i\theta_{b2}})
+\end{align}
+where $\tau_{a1}=2\Gamma e^{i\varphi_1}\cos\theta_{a1}$, 
+$\tau_{b2}=2\Gamma e^{i\varphi_2}\cos\theta_{b2}$, 
+$\tau_{b3}=2\Gamma e^{i\varphi_3}\cos\theta_{b3}$.
