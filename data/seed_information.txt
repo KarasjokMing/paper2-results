@@ -1,0 +1,1 @@
+Random seeds used in validation scripts are fixed in the scripts: validate_direct_oracle.py uses seed 12345; WG2 eta audit uses seed 42. Figure scripts are deterministic given data/optimized_params.json.

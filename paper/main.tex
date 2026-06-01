@@ -349,20 +349,24 @@ All angular parameters are quoted in units of $\pi$ below.
 \subsection{Phase-space routing maps}
 
 Figure~\ref{fig:phase_maps} displays two-dimensional slices through the seven-dimensional routing landscape around the high-transmission basins identified by the zero-condition coverings of Table~\ref{tab:zero_coverings}.
-The plotted coordinates are chosen channel by channel so that the relevant structure is visible: broad routes are shown on full or seam-centered phase windows, while the remote waveguide-3 routes require a magnified near-resonant window.
+Figure~\ref{fig:phase_maps} shows four representative phase-space maps rather than all six target ports.
+This choice follows the symmetry structure of the fixed-backbone problem: $T_2$ and $R_2$ form a direction-related pair, and $T_3$ and $R_3$ form a corresponding far-waveguide pair.
+Therefore, $T_2$ and $T_3$ are used as representative members of these two pairs, while $R_2$ and $R_3$ are retained in the full numerical data set and in the repository all-target figure but not shown in the main figure.
+The purpose of Fig.~\ref{fig:phase_maps} is not to enumerate every optimized target, but to compare the distinct routing mechanisms: direct self-transmission, same-waveguide reflection, shared-waveguide routing, and far-waveguide routing.
+The plotted coordinates are chosen channel by channel so that the relevant structure is visible: broad routes are shown on full or seam-centered phase windows, while the remote waveguide-3 representative route requires a magnified near-resonant window.
 All panels use the same probability color scale, so the areas of the high-fidelity regions can be compared directly.
-The remaining parameters are held at their optimized values listed in Appendix~\ref{app:opt}.
+The remaining parameters are held at their optimized values listed in Appendix~\ref{app:opt}, where the full six-target numerical record is preserved.
 
 \begin{figure*}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig_phase_routing_maps.pdf}
-  \caption{Phase-coordinate routing landscapes around the six fixed-backbone optima for waveguide-1 edge incidence.
+  \caption{Representative phase-coordinate routing landscapes for four fixed-backbone routing mechanisms under waveguide-1 edge incidence.
   The $T_1$ panel shows the full $0$--$2\pi$ phase plane, while the $R_1$ panel is recentered at the periodic seam so that the two edge features join into one continuous high-transmission region.
-  The $T_2$ and $R_2$ panels use extended branch windows large enough to show the boundary of the high-fidelity islands around the correlated branch neighborhoods introduced below.
-  The $T_3$ and $R_3$ panels use magnified near-resonant windows because their high-fidelity regions are much narrower on the full phase torus.
+  The $T_2$ panel uses an extended branch window large enough to show the boundary of the high-fidelity island around the correlated branch neighborhood introduced below.
+  The $T_3$ panel uses a magnified near-resonant window because the far-waveguide high-fidelity region is much narrower on the full phase torus.
   Contours mark $P=0.9$, $0.99$, and $0.999$ where visible.
   These two-dimensional cuts demonstrate sufficient high-probability routes around representative optima; they are not intended as uniqueness proofs for the corresponding routing conditions.
-  The exact optimized parameters are given in Table~\ref{tab:opt}.}
+  The complete six-target optimized parameter record is given in Table~\ref{tab:opt}; the symmetry-related $R_2$ and $R_3$ maps are retained in the repository all-target figure.}
   \label{fig:phase_maps}
 \end{figure*}
 
@@ -370,13 +374,14 @@ The $T_1$ panel is particularly instructive: the broad diagonal band of high tra
 This condition is not claimed to be the only mathematical route to $T_1=1$; it is the simplest constructive route because it suppresses all five non-target amplitudes at once.
 The width of the band reflects the insensitivity of the denominator $M$ to the specific value of the phase sum within a reasonable tolerance.
 
-The $T_2$ and $R_2$ panels exhibit compact high-probability islands, consistent with the composite-interference mechanism: these channels require the simultaneous satisfaction of multiple zero conditions, leaving a lower-dimensional solution manifold.
-Both are shown because the two output directions correspond to different linear-combination zeros, even though they are symmetry-related.
-The $T_3$ and $R_3$ panels show very narrow near-resonant ridges, reflecting the singular nature of the waveguide-3 routing mechanism discussed in Sec.~\ref{sec:edge}. These channels require sub-percent-level tuning of the coupling phases.
+The $T_2$ panel exhibits a compact high-probability island, consistent with the composite-interference mechanism: this representative shared-waveguide channel requires the simultaneous satisfaction of multiple zero conditions, leaving a lower-dimensional solution manifold.
+The $R_2$ map is omitted from the main figure because it is symmetry-related to $T_2$ and does not introduce a distinct routing class.
+The $T_3$ panel shows a very narrow near-resonant ridge, reflecting the singular nature of the waveguide-3 routing mechanism discussed in Sec.~\ref{sec:edge}; the symmetry-related $R_3$ map is likewise omitted from the main figure and retained only in the full numerical record.
+The complete set of six optimized parameter sets in Table~\ref{tab:opt} is therefore a numerical record, whereas Fig.~\ref{fig:phase_maps} is a representative mechanism comparison.
 
 \subsection{Correlated branch for \texorpdfstring{$T_2/R_2$}{T2/R2} routing}
 
-The compact $T_2$ and $R_2$ islands in Fig.~\ref{fig:phase_maps} become more transparent when the correlated phase branch behind the composite-interference route is imposed explicitly.
+The compact $T_2$ island in Fig.~\ref{fig:phase_maps}, together with its symmetry-related $R_2$ counterpart retained in the full numerical data set, becomes more transparent when the correlated phase branch behind the composite-interference route is imposed explicitly.
 For the $T_2$ route, the optimized point lies close to the following sufficient branch.
 Writing phases in units of $\pi$, one representative branch is
 \begin{equation}
@@ -853,7 +858,8 @@ The verification code is organized in the online repository prepared at \url{htt
 \section{Optimized routing parameters}
 \label{app:opt}
 
-Table~\ref{tab:opt} lists the independently optimized parameter sets for waveguide-1 edge incidence that achieve the routing probabilities shown in Fig.~\ref{fig:phase_maps}.
+Table~\ref{tab:opt} lists the independently optimized parameter sets for all six waveguide-1 edge-incidence targets.
+Only four representative channels are plotted in Fig.~\ref{fig:phase_maps}; the table gives the full numerical record, including the symmetry-related $R_2$ and $R_3$ targets.
 
 \begin{table}[!htbp]
 \caption{Optimized parameter sets for waveguide-1 edge incidence, $\Gamma=1,\theta_{a2}=\pi$. Angles normalized by $\pi$.}
