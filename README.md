@@ -40,7 +40,7 @@ Run from the repository root:
 
 ```bash
 python scripts/regenerate_fig2.py
-python scripts/regenerate_fig3.py
+python scripts/regenerate_fig3_mechanism_comparison.py
 python scripts/regenerate_fig4.py
 ```
 
@@ -49,7 +49,8 @@ Outputs:
 - `figures/figure2_representative.pdf`: main-text Fig. 2 with exactly `T1`, `R1`, `T2`, `T3`; the `T1` panel fixes `P_{1+}=0` and scans unrelated phases.
 - `figures/figure2_all6_supplementary.pdf`: all-six repository map containing `T1`, `R1`, `T2`, `R2`, `T3`, `R3`.
 - `figures/t1_sufficient_condition_scan.pdf`: standalone `T1` robustness scan with `P_{1+}=0` imposed.
-- `figures/fig3_correlated_branch.pdf`: correlated `C_2(q)` branch verification.
+- `figures/figure3_mechanism_comparison.pdf`: main-text Fig. 3 mechanism comparison for `R1`, `T2`, and `T3`.
+- `figures/fig3_correlated_branch.pdf`: compatibility filename for the same Fig. 3 mechanism comparison output.
 - `figures/fig4_detuning_sensitivity.pdf`: near-resonant detuning-sensitivity comparison.
 
 ## Validation Commands
@@ -77,7 +78,7 @@ Expected residuals:
 - WG2-L eta-form and back-substitution checks: `audit/audit_WG2L_eta_form.py`.
 - All six incident ports: `src/symmetry_checks.py` and `audit/audit_all_ports_eta_form.py`.
 - Fig. 2: `scripts/regenerate_fig2.py`.
-- Fig. 3: `scripts/regenerate_fig3.py`.
+- Fig. 3: `scripts/regenerate_fig3_mechanism_comparison.py`.
 - Fig. 4 detuning sensitivity: `scripts/regenerate_fig4.py`.
 - Optimized parameter table: `scripts/export_tables.py`.
 
@@ -88,6 +89,7 @@ Expected residuals:
 - `reports/requirements_traceability.md`: requirement-by-requirement traceability.
 - `reports/author_comments_traceability.md`: traceability for the 13 author comments addressed in the manuscript revision.
 - `reports/figure2_redesign_report.md`: parameters and design rationale for revised Fig. 2.
+- `reports/figure3_mechanism_comparison_report.md`: scan definitions, constraints, and area metrics for revised Fig. 3.
 - `reports/middle_incidence_scope_report.md`: scope statement for the middle-incidence treatment.
 
 ## Deprecated Code

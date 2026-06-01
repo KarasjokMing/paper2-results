@@ -390,9 +390,13 @@ The $R_2$ map is omitted from the main figure because it is symmetry-related to 
 The $T_3$ panel shows a very narrow near-resonant ridge, reflecting the singular nature of the waveguide-3 routing mechanism discussed in Sec.~\ref{sec:edge}; the symmetry-related $R_3$ map is likewise omitted from the main figure and retained only in the full numerical record.
 The complete set of six optimized parameter sets in Table~\ref{tab:opt} is therefore a numerical record, whereas Fig.~\ref{fig:phase_maps} is a representative mechanism comparison.
 
-\subsection{Correlated branch for \texorpdfstring{$T_2/R_2$}{T2/R2} routing}
+\subsection{Mechanism-guided basin comparison}
 
-The compact $T_2$ island in Fig.~\ref{fig:phase_maps}, together with its symmetry-related $R_2$ counterpart retained in the full numerical data set, becomes more transparent when the correlated phase branch behind the composite-interference route is imposed explicitly.
+The representative landscapes in Fig.~\ref{fig:phase_maps} show where high routing probability occurs, but they do not by themselves explain how different mechanisms shape the local high-fidelity basin.
+Figure~\ref{fig:branch_verification} therefore compares three representative nontrivial routes, $R_1$, $T_2$, and $T_3$, under two kinds of two-parameter scans: an unconstrained local scan around the optimized point and a mechanism-guided scan.
+The symmetry-related $R_2$ and $R_3$ channels are omitted from this main mechanism comparison for the same reason they are omitted from Fig.~\ref{fig:phase_maps}: they do not introduce additional mechanism classes under the fixed-backbone symmetry and are retained in Table~\ref{tab:opt} and the online repository.
+
+Only the $T_2$ row uses a closed analytic correlated branch.
 For the $T_2$ route, the optimized point lies close to the following sufficient branch.
 Writing phases in units of $\pi$, one representative branch is
 \begin{equation}
@@ -410,21 +414,23 @@ Writing phases in units of $\pi$, one representative branch is
 with $\thbtwo/\pi=q$ for one $T_2$ branch and a symmetry-related choice for $R_2$.
 This relation should be read as a constructive sufficient path through parameter space rather than as a uniqueness statement.
 
-Figure~\ref{fig:branch_verification} makes the role of the correlated $T_2/R_2$ phase relations explicit.
-For each channel we compare two scans on the same $(q,\eta)$ window and with the same probability color scale.
-In the unconstrained scan, only the local variables $(q,\eta)$ are varied around a single high-transmission point, while the remaining phases are held fixed.
-In the constrained scan, the full branch $\mathcal{C}_2(q)$ is imposed and the same transverse deviation $\eta$ is scanned.
-The high-fidelity area is then much larger, showing that the phase relations are not merely a convenient parametrization but actively enlarge the routing basin.
+For the $R_1$ and $T_3$ rows no analogous analytic branch is claimed.
+Instead, the guided scans are numerical continuations performed with the direct $14\times14$ oracle.
+For $R_1$, the direct-oracle continuation recenters the local scan by optimizing $\theta_{a1}$ for each displacement of $\varphi_2$, representing a same-waveguide composite-interference route.
+For $T_3$, the guided scan recenters the detuning for each displacement of $\varphi_2$, representing the near-resonant far-waveguide route.
+These numerical continuations are not proofs of uniqueness; they are local mechanism-guided cuts that show how the verified zero-condition mechanisms organize the high-fidelity basins.
 
 \begin{figure*}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig_constructive_branch_verification.pdf}
-  \caption{Effect of enforcing the constructive $T_2/R_2$ phase branch.
-  Left column: only the two local variables $(q,\eta)$ are scanned around a single high-transmission point, without enforcing the correlated relations in $\mathcal{C}_2(q)$.
-  The insets magnify the narrow high-fidelity spots in the unconstrained scans.
-  Right column: the full $\mathcal{C}_2(q)$ branch is imposed and the same transverse deviation $\eta$ is scanned.
-  All panels use the same color scale; contours mark $P=0.9$, $0.99$, and $0.999$.
-  The displayed area fractions $A_{.99}$ and $A_{.999}$ show that the derived phase constraints substantially enlarge the high-fidelity basin.}
+  \caption{Representative mechanism comparison for nontrivial waveguide-1 edge-incidence routes.
+  Rows show $R_1$ (same-waveguide composite reflection), $T_2$ (shared-waveguide routing), and $T_3$ (near-resonant far-waveguide routing).
+  Left column: unconstrained local two-parameter scans around the optimized point.
+  Right column: mechanism-guided scans.
+  The $T_2$ row imposes the analytic correlated branch $\mathcal{C}_2(q)$ defined in Eq.~\eqref{eq:C2_branch}.
+  The $R_1$ row uses direct-oracle numerical continuation of $\theta_{a1}$ around the optimized composite route, and the $T_3$ row uses direct-oracle detuning-guided continuation around the near-resonant route; no analytic $R_1$ or $T_3$ branch is assumed.
+  All panels use the same probability color scale; contours mark $P=0.9$, $0.99$, and $0.999$ where visible.
+  The displayed area fractions compare the high-fidelity basins for representative mechanisms rather than enumerating all six output channels.}
   \label{fig:branch_verification}
 \end{figure*}
 
