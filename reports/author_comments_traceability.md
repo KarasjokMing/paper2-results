@@ -3,7 +3,7 @@
 | Author comment | Status: Done/Partial/Not done | Exact manuscript change | Figure/script/repository evidence | Remaining caveat |
 | --- | --- | --- | --- | --- |
 | 1. Simplify abstract | Done | `manuscript/main.tex:40-46` rewrites the abstract around the model, geometry, exact solution, full \(6\times6\) matrix, phase-controlled routing, small-atom contrast, and plain time-reversal relation. | Compiled in `main_author_comments_revised.pdf`. | None. |
-| 2. Distinguish Appendix, Supplemental Material, and GitHub | Partial | `manuscript/main.tex` uses Appendix for in-PDF derivations and online repository for code/data; no separate Supplemental Material is cited. | Search performed for `Supplemental Material`, `supplementary`, `repository`, and `machine-readable`; remaining repository statements are online-repository statements. | Manuscript data-availability wording should be finalized with the latest pushed commit hash after repository push is verified. |
+| 2. Distinguish Appendix, Supplemental Material, and GitHub | Done | `manuscript/main.tex` uses Appendix for in-PDF derivations and online repository for code/data; no separate Supplemental Material is cited. The verification-code statement names `https://github.com/KarasjokMing/paper2-results`, branch `codex/repro-package`, commit `38a2a92`. | Search performed for `Supplemental Material`, `supplementary`, `repository`, and `machine-readable`; remaining repository statements are online-repository statements. | None. |
 | 3. Direct port convention | Done | `manuscript/main.tex:101-110` defines `(1,2,3,4,5,6)` and immediately states \(S_{ij}\) is output port \(i\) for input port \(j\); `s^{(1)}` is given as `(r1,t1,r2,t2,r3,t3)^T`. | Compiled in `main_author_comments_revised.pdf`. | None. |
 | 4. Explain eta-form and reconcile \(r_2\) with eta-form | Done | `manuscript/main.tex:208-213` explains \(\eta_a^{(j)},\eta_b^{(j)}\), incident-port superscripts, source dependence, and separation of atomic response from radiation factors; `manuscript/main.tex:255-257` states \(r_2=-\Gamma P_{1+}A_r/M\) is verified and the simple \(t_2,t_3,r_3\) eliminated forms failed audit. | `_github_upload/audit/audit_WG1L_eta_form.py`; `_github_upload/reports/formula_audit_report.md`; `_github_upload/outputs/reports/WG1L_eta_form_audit.md`. | None. |
 | 5. Consistent phase-factor notation | Done | `manuscript/main.tex:225-234` defines \(P_{j,m}^{\rm src}\), \(P_{j,m}^{L}\), and \(P_{j,m}^{R}\), explains \(P^R=(P^{\rm src})^*\), and defines \(P_{1+},P_{1-},P_{3+},P_{3-}\) as shorthand. | Search removed unexplained `P_{1+}^*`, `P_{2+}^{a*}`, and `P_{3+}^*` from the main amplitude discussion. | Some shorthand remains where already defined and physically useful. |
@@ -21,7 +21,7 @@
 | Item | Status |
 | --- | --- |
 | Abstract simplified | Done |
-| Appendix/Supplemental/GitHub terminology standardized | Partial until final repository commit hash is inserted or explicitly deferred |
+| Appendix/Supplemental/GitHub terminology standardized | Done |
 | Port convention direct | Done |
 | Eta-form explanation added | Done |
 | Phase notation consistent | Done |
@@ -33,4 +33,4 @@
 | T1 sufficient-condition scan added | Done |
 | Main Fig. 2 uses T1/R1/T2/T3 only | Done |
 | \(C_2(q)\) introduced only in Fig. 3 branch discussion | Done |
-| GitHub repository populated and commit hash returned | Pending push verification |
+| GitHub repository populated and commit hash returned | Done: `38a2a92` on branch `codex/repro-package` |
